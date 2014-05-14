@@ -1,0 +1,19 @@
+<h1>All the shows!</h1>
+
+
+
+
+
+
+<% @tvshows.each do |b| %>
+  <ul>
+    <li>
+      <%= link_to show_path b do %>
+        <strong><%= b.name %></strong>
+      <% end %>
+  </li>
+  <li>
+  	<%= b.name %>
+  </li>
+  </ul>
+<% end %>

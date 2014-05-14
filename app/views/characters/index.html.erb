@@ -1,0 +1,18 @@
+<h1>All My characters!</h1>
+<p>I've got <%= @characters.count %> characters ready to go!</p>
+
+<% @characters.each do |b| %>
+  <ul>
+    <li>
+      
+      
+      name: <%= link_to character_path b do %>
+      <strong><%= b.name %></strong>
+      <%end%>
+      description: <%= b.description %>
+      
+ 
+      
+    </li>
+  </ul>
+<% end %>
