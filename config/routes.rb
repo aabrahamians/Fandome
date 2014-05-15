@@ -1,7 +1,12 @@
 Fandome::Application.routes.draw do
-  resources :tvshows
-  resources :characters
   resources :users
+  resources :tvshows do
+    resources :characters do
+      resources :stories do
+          resources :stories
+        end
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

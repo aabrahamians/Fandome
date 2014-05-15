@@ -6,7 +6,7 @@
     <li>
       
       
-      name: <%= link_to new_character_path b do %>
+      name: <%= link_to tvshow_characters_path(b.id) do %>
       <strong><%= b.name %></strong>
       genre:  <strong><%= b.genre %></strong>
       <%end%>
