@@ -1,6 +1,6 @@
-<h1>All My characters!</h1>
+<h1> <=% @tvshow.name => characters!</h1>
 <p>I've got <%= @characters.count %> characters ready to go!</p>
-
+<%= link_to "New character", new_character_path %>
 <% @characters.each do |b| %>
   <ul>
     <li>
@@ -11,8 +11,10 @@
       <%end%>
       description: <%= b.description %>
       
+
  
-      
+            <%= link_to 'Delete', b, method: :delete, data: { confirm: 'Are you sure?' } %>
+ 
     </li>
   </ul>
 <% end %>

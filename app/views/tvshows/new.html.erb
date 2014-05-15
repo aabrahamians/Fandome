@@ -1,0 +1,10 @@
+    <h1> Add a new show! </h1>
+
+    <%= form_for @tvshow do |f| %>
+        Name: <%= f.text_field :name %> <br>
+        Genre: <%= f.text_field :genre %>
+        
+        <%= f.submit "Add show!" %>
+
+    <% end %>
+
