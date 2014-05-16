@@ -4,6 +4,6 @@ class Story
   field :body, type: String
   field :datecreated, type: Time
 
-  belongs_to :story
+  belongs_to :character
   belongs_to :user
 end

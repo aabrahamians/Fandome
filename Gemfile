@@ -3,13 +3,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'genghis', '~> 1.4.1'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 gem 'bootstrap-sass'
-
-gem 'mongoid', github: 'mongoid/mongoid'
-gem 'genghis', '~> 1.4.1'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -37,6 +36,11 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'database_cleaner'
+end
 # Use unicorn as the app server
 # gem 'unicorn'
 

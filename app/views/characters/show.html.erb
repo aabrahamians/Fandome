@@ -1,0 +1,14 @@
+
+  <b>Name:</b>
+  <%= @character %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @character %>
+</p>
+<p>All of  <%= @character.name %>'s stories</p>
+<% @character.stories.each do |s| %>
+  <strong><%= s.title %></strong>
+  Body:  <strong><%= s.body %></strong>
+<% end %>

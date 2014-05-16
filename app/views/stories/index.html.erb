@@ -1,0 +1,19 @@
+<h1>All My tvshows!</h1>
+<p>I've got <%= @stories.count %> shows ready to go!</p>
+<%= link_to "New story", new_story_path %>
+<% @stories.each do |b| %>
+  <ul>
+    <li>
+      
+      
+      name: <%= link_to tvshow_character_stories_path(b.id) do %>
+      <strong><%= b.name %></strong>
+      Body:  <strong><%= b.body %></strong>
+      <%end%>
+
+      
+ 
+      
+    </li>
+  </ul>
+<% end %>

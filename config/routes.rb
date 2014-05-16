@@ -1,22 +1,24 @@
 Fandome::Application.routes.draw do
+   get '/tvshows/:tvshow_id/characters/:id(.:format)' => 'character#show', as: 'areg'
+
   resources :users
   resources :tvshows do
     resources :characters do
       resources :stories do
-          resources :stories
         end
+      end
     end
-  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'tvshows#index'
 
   # Example of regular route:
+  
   #   get 'products/:id' => 'catalog#view'
-
+   # get "/tvshows/:tvshow_id/characters/:character_id/stories(.:format)"
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

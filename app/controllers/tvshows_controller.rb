@@ -20,6 +20,11 @@ def create
 		render 'new'
 	end
 end
+def destroy
+	@tvshow= Tvshow.find(params[:id])
+	@tvshow.destroy
+	redirect_to tvshows_path
+end
 
 
 
