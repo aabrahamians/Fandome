@@ -1,5 +1,7 @@
 <h1>New User</h1>
-
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
 <%= bootstrap_form_for @user do |f| %>
   <%= f.text_field :name, placeholder: 'Username', label: "Username"  %>
   <br>
@@ -11,3 +13,4 @@
   <br>
   <%= f.submit %>
 <% end %>
+</div></div></div>

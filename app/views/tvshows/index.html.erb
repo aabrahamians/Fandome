@@ -1,24 +1,29 @@
-<h1>All My tvshows!</h1>
-<p>I've got <%= @tvshows.count %> shows ready to go!</p>
-<%= link_to "New tvshow", new_tvshow_path %>
+<h1>What is your favorite show?</h1>
+
+
+
+<button type="button" class="btn btn-default"><%= link_to "New Tvshow", new_tvshow_path %></button>
+
+
 <% @tvshows.each do |b| %>
-  <ul>
-    <li>
+  
       
-      
+      <div class="container-fluid">
+<div class="row ">
+    <div class="col-md-3">
       name: <%= link_to tvshow_characters_path(b.id) do %>
       <strong><%= b.name %></strong>
-      <%end%>
+      <%end%>  
+      <br>
       genre:  <strong><%= b.genre %></strong>
-
+	  <br>
        <% if (current_user == b.user) %>
             <%= link_to 'Delete', b, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <%= link_to "edit", edit_tvshow_path(b) %>
+            <%= link_to "Edit", edit_tvshow_path(b) %>
       <% end %>
 
-      
+      </div> </div> </div>
  
       
-    </li>
-  </ul>
+   
 <% end %>

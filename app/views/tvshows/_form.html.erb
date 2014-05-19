@@ -1,6 +1,6 @@
-    <%= form_for @tvshow do |f| %>
-        Name: <%= f.text_field :name %> <br>
-        Genre: <%= f.text_field :genre %>
+    <%= bootstrap_form_for @tvshow do |f| %>
+        <%= f.text_field :name %> <br>
+        <%= f.text_field :genre %>
         
         <%= f.submit "Add show!" %>
 
