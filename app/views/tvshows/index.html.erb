@@ -9,6 +9,8 @@
       name: <%= link_to tvshow_characters_path(b.id) do %>
       <strong><%= b.name %></strong>
       genre:  <strong><%= b.genre %></strong>
+
+       <%= link_to 'Delete', b, method: :delete, data: { confirm: 'Are you sure?' } %>
       <%end%>
 
       

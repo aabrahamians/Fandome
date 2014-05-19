@@ -1,14 +1,13 @@
 
-  <b>Name:</b>
-  <%= @character %>
-</p>
 
-<p>
-  <b>Genre:</b>
-  <%= @character %>
-</p>
 <p>All of  <%= @character.name %>'s stories</p>
+<%= link_to "New story",  new_character_story_path(@character) %>
 <% @character.stories.each do |s| %>
-  <strong><%= s.title %></strong>
-  Body:  <strong><%= s.body %></strong>
+
+<div>
+	title: <strong><%= s.title %></strong> <br>
+  	Body:  <strong><%= s.body %></strong>
+
+  	<%= link_to 'Delete', story_path(s), method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
+</div>

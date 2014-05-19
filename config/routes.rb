@@ -1,13 +1,14 @@
 Fandome::Application.routes.draw do
-   get '/tvshows/:tvshow_id/characters/:id(.:format)' => 'character#show', as: 'areg'
 
   resources :users
-  resources :tvshows do
-    resources :characters do
-      resources :stories do
-        end
-      end
+  resources :sessions
+  resources :tvshows, shallow: true do
+    resources :characters, shallow: true do
+      resources :stories
     end
+  end
+
+  get '/tvshows/:tvshow_id/characters/:id(.:format)' => 'character#show', as: 'areg'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

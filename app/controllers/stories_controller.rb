@@ -1,10 +1,10 @@
 class StoriesController < ApplicationController
 
-
-before_action :charactersfind
+before_action :authenticate_user
+before_action :charactersfind, only: [:index, :create, :new]
 
 def index
-	@Stories = Story.where(story: @character)
+	@stories = Story.where(story: @character)
 end
 
 def show
@@ -16,28 +16,31 @@ def new
 end  
 
 def create
-	@story = Story.new(params.require(:story).permit(:name, :body))
+	@story = current_user.stories.new(params.require(:story).permit(:title, :body))
 	@story.character = @character
+	@story.user = current_user
 	if @story.save
-		redirect_to areg_path([:id])
+		redirect_to character_path(@character)
 	else
 		render 'new'
 	end
 end
 
 def destroy
-	@story= Story.find(params[:id])
-	@story.destroy
-	redirect_to tvshow_stories_path
+		@story= Story.find(params[:id])
+	if (@character.user == current_user)
+		@story.destroy
+		redirect_to character_path(@story.character_id)
+	else
+		redirect_to character_path(@story.character_id)
+	end
 end
 
 
 private
 def charactersfind
 	@character = Character.find(params[:character_id])
-     @tvshow = Tvshow.find(params[:tvshow_id])
+
 end
-
-
 
 end

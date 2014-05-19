@@ -1,4 +1,5 @@
 class TvshowsController < ApplicationController
+before_action :authenticate_user
 
 def index
 	@tvshows = Tvshow.all
@@ -13,7 +14,8 @@ def new
 end  
 
 def create
-	@tvshow = Tvshow.new(params.require(:tvshow).permit(:name, :genre))
+	@tvshow = current_user.tvshow.new(params.require(:tvshow).permit(:name, :genre))
+	@tvshow.user = current_user
 	if @tvshow.save
 		redirect_to tvshows_path
 	else
@@ -21,9 +23,14 @@ def create
 	end
 end
 def destroy
-	@tvshow= Tvshow.find(params[:id])
-	@tvshow.destroy
-	redirect_to tvshows_path
+		@tvshow= Tvshow.find(params[:id])
+	if	(@character.user == current_user)
+		@tvshow.destroy
+		redirect_to tvshows_path
+	else
+		redirect_to tvshows_path
+	end
+
 end
 
 

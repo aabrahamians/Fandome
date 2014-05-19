@@ -1,0 +1,16 @@
+ <!-- Make this the main page! -->
+
+<div class="row">
+    <div class="col-lg-3">
+<h1>Login</h1>
+
+<%= bootstrap_form_for :session, :url => sessions_path do |f| %>
+ 	<%= f.text_field :email %>
+  <br>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit "Login" %>
+<% end %>
+
+</div>
+</div>

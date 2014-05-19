@@ -1,20 +1,24 @@
 <h1> <%= @tvshow.name %> characters!</h1>
 <p>I've got <%= @characters.count %> characters ready to go!</p>
 <%= link_to "New character", new_tvshow_character_path(@tvshow) %>
-<% @characters.each do |b| %>
+<% @characters.each do |c| %>
   <ul>
     <li>
-      
-      
-      name: <%= link_to tvshow_character_path(@tvshow, b) do %>
-      <strong><%= b.name %></strong>
+      name: <%= link_to character_path(c) do %>
+      <strong><%= c.name %></strong>
       <%end%>
-      description: <%= b.description %>
-      
+    <br>
+      description: <%= c.description %>
+      <br>
 
- 
-            <%= link_to 'Delete', tvshow_character_path(@tvshow,b), method: :delete, data: { confirm: 'Are you sure?' } %>
- 
+             <% if @character.user_id.to_s == session[:remember_token].to_s %>
+            <%= link_to 'Delete', c, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to "edit", edit_character_path(c) %>
+            <% end %>
+              
     </li>
   </ul>
+
+  
 <% end %>
+ <%= link_to 'Back to Tvshows', tvshows_path %>

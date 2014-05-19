@@ -10,4 +10,10 @@
  *
  *= require_self
  *= require_tree .
+ *= require rails_bootstrap_forms
  */
+@import "bootstrap";
+
+nav {
+	margin-bottom: 200px;
+}

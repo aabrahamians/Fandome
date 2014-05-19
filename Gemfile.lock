@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/alexdunae/validates_email_format_of.git
+  revision: f2b20985865069905ba58580bfcfb41c198107b6
+  specs:
+    validates_email_format_of (1.5.3)
+
+GIT
   remote: git://github.com/mongoid/mongoid.git
   revision: 9be37a9266d8b703e8f549af7bb6977e7a3a8352
   specs:
@@ -39,6 +45,7 @@ GEM
     bcrypt (3.1.7)
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
+    bootstrap_form (2.1.1)
     bson (2.2.3)
     builder (3.1.4)
     coffee-rails (4.0.1)
@@ -150,7 +157,8 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
-  bootstrap-sass
+  bootstrap-sass (~> 3.1.1)
+  bootstrap_form
   coffee-rails (~> 4.0.0)
   database_cleaner
   genghis (~> 1.4.1)
@@ -164,3 +172,4 @@ DEPENDENCIES
   sdoc
   turbolinks
   uglifier (>= 1.3.0)
+  validates_email_format_of!

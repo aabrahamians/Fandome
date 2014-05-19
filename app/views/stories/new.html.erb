@@ -2,7 +2,7 @@
 
     <%= form_for [@tvshow, @character, @story] do |f| %>
         Name: <%= f.text_field :title %> <br>
-        Genre: <%= f.text_area :body %>
+        Story: <%= f.text_area :body %>
 
         
         <%= f.submit "Add show!" %>

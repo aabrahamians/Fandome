@@ -1,0 +1,10 @@
+
+    <%= form_for [@tvshow, @character] do |f| %>
+       
+        Name: <%= f.text_field :name %> <br>
+        Description: <%= f.text_area :description %>
+        
+        <%= f.submit "Add character!" %>
+
+    <% end %>
+

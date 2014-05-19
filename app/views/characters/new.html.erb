@@ -1,10 +1,4 @@
     <h1> Add a new character! </h1>
 
-    <%= form_for [@tvshow, @character] do |f| %>
-        Name: <%= f.text_field :name %> <br>
-        description: <%= f.text_area :description %>
-        
-        <%= f.submit "Add character!" %>
 
-    <% end %>
-
+<%= render partial: "form" %>

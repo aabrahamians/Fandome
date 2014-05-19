@@ -1,0 +1,2 @@
+class CharacterController < CharactersController 
+end

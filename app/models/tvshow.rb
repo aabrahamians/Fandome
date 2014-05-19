@@ -4,4 +4,5 @@ class Tvshow
   field :genre, type: String
 
   has_many :characters
+  belongs_to :user
 end
