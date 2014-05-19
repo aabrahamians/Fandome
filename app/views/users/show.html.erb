@@ -1,6 +1,6 @@
-<p>All of  <%= @character.name %>'s stories</p>
-<%= link_to "New story",  new_character_story_path(@character) %>
-<% @character.stories.each do |s| %>
+
+  <p>All of  <%= @user.name %>'s activity</p>
+<% @user.stories.each do |s| %>
 
 <div>
 	title: <strong><%= s.title %></strong> <br>

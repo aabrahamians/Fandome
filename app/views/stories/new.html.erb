@@ -1,10 +1,4 @@
     <h1> Add a new story! </h1>
 
-    <%= form_for [@tvshow, @character, @story] do |f| %>
-        Name: <%= f.text_field :title %> <br>
-        Story: <%= f.text_area :body %>
-
-        
-        <%= f.submit "Add show!" %>
-
-    <% end %>
+   
+<%= render partial: "form" %>

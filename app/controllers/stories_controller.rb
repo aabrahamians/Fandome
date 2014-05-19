@@ -26,9 +26,27 @@ def create
 	end
 end
 
+
+ def edit
+    @story = Story.find(params[:id])
+    
+  end
+
+  def update
+  	
+    @story = Story.find(params[:id])
+    if @story.update(params.require(:story).permit(:title, :body))
+       redirect_to character_path(@character)
+    else
+       render 'edit'
+    end
+  end
+
+
+
 def destroy
 		@story= Story.find(params[:id])
-	if (@character.user == current_user)
+	if (@story.user == current_user)
 		@story.destroy
 		redirect_to character_path(@story.character_id)
 	else

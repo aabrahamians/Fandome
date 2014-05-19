@@ -33,7 +33,7 @@ end
 
   def update
   	
-    	@character = Character.find(params[:id])
+    @character = Character.find(params[:id])
     if @character.update(params.require(:character).permit(:name, :description))
        redirect_to tvshow_characters_path(@character.tvshow_id)
     else
