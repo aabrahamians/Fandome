@@ -1,8 +1,7 @@
 <p>All of  <%= @character.name %>'s stories</p>
 <%= link_to "New story",  new_character_story_path(@character) %>
+<div style="border:2px dotted black; width: 15%;">
 <% @character.stories.each do |s| %>
-
-<div>
 	title: <strong><%= s.title %></strong> <br>
   	Body:  <strong><%= s.body %></strong>
 
@@ -12,4 +11,5 @@
         <% end %>
 <% end %>
 </div>
-<%= link_to 'Back to Tvshows', tvshow_characters_path(@character) %>
+
+<%= link_to 'Back to Tvshows', tvshow_characters_path(":tvshow_id") %>
